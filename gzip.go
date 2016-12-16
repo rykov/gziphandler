@@ -131,6 +131,11 @@ func (w *GzipResponseWriter) Flush() {
 	}
 }
 
+// Wrap incoming ResponseWriter with this gzipping one
+func NewGzipResponseWriter(w http.ResponseWriter, level int) *GzipResponseWriter {
+	return &GzipResponseWriter{ResponseWriter: w, index: poolIndex(level)}
+}
+
 // MustNewGzipLevelHandler behaves just like NewGzipLevelHandler except that in
 // an error case it panics rather than returning an error.
 func MustNewGzipLevelHandler(level int) func(http.Handler) http.Handler {
