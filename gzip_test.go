@@ -2,8 +2,8 @@ package gziphandler
 
 import (
 	"bytes"
-	"compress/gzip"
 	"fmt"
+	"github.com/klauspost/compress/gzip"
 	"io"
 	"io/ioutil"
 	"net"

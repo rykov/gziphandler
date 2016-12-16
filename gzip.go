@@ -1,8 +1,8 @@
 package gziphandler
 
 import (
-	"compress/gzip"
 	"fmt"
+	"github.com/klauspost/compress/gzip"
 	"net/http"
 	"strconv"
 	"strings"
